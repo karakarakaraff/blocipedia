@@ -16,3 +16,47 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.a, body > div > a {
+  color: #9d9d9d;
+}
+
+.a:hover, body > div > a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.button {
+  color: #000;
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: solid #000 2px;
+  text-decoration: none;
+}
+
+.button:hover {
+  -webkit-box-shadow: 3px 3px 0px #000;
+  -moz-box-shadow: 3px 3px 0px #000;
+  box-shadow: 3px 3px 0px #000;
+  text-decoration: none;
+  color: #000;
+}
+
+.button-form {
+  font-size: small;
+  color: #000;
+  background: #fff;
+  margin: 10px 0;
+  padding: 5px 10px;
+  border: solid #000 2px;
+  text-decoration: none;
+}
+
+.button-form:hover {
+  -webkit-box-shadow: 3px 3px 0px #000;
+  -moz-box-shadow: 3px 3px 0px #000;
+  box-shadow: 3px 3px 0px #000;
+  text-decoration: none;
+  color: #000;
+}

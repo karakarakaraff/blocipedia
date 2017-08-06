@@ -65,7 +65,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# Devise is a flexible authentication solution. https://github.com/plataformatec/devise
+gem 'devise'
 
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Store Sendgrid and Devise credentials
+gem 'figaro', '1.0'
