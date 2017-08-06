@@ -85,6 +85,7 @@ GEM
       mini_portile2 (~> 2.2.0)
     nyan-cat-formatter (0.12.0)
       rspec (>= 2.99, >= 2.14.2, < 4)
+    pg (0.21.0)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -200,6 +201,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   nyan-cat-formatter
+  pg
   puma (~> 3.7)
   rails (~> 5.1.2)
   rails-controller-testing
