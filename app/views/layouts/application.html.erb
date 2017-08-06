@@ -15,7 +15,7 @@
           <li class="active"><%= link_to "Home", root_path %></li>
         </ul>
         <% if user_signed_in? %>
-          <p class="navbar-text">Signed in as <strong><%= current_user.email %></strong></p>
+          <p class="navbar-text">Signed in as <strong><%= current_user.username %></strong></p>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Edit profile", edit_user_registration_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>

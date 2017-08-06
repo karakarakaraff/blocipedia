@@ -47,7 +47,7 @@
   font-size: small;
   color: #000;
   background: #fff;
-  margin: 10px 0;
+  margin-bottom: 20px;
   padding: 5px 10px;
   border: solid #000 2px;
   text-decoration: none;
@@ -59,4 +59,8 @@
   box-shadow: 3px 3px 0px #000;
   text-decoration: none;
   color: #000;
+}
+
+form > .field {
+  margin-bottom: 10px;
 }
