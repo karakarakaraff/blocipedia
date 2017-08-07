@@ -8,6 +8,10 @@ module RandomData
      "#{random_word}@#{random_word}.#{random_word}"
    end
 
+   def self.random_password
+     "#{random_word}#{random_word}"
+   end
+
   def self.random_paragraph
     sentences = []
     rand(4..6).times do

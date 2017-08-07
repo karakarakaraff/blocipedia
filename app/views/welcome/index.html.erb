@@ -2,8 +2,7 @@
   <div class="col-md-12">
     <h1 class="text-center">Blocipedia: Social, Markdown Wikis</h1>
     <% if user_signed_in? %>
-      <p>Hello, <%= current_user.username %>!</p>
-      <p><%= link_to "View all wikis", wikis_path, class: 'button' %></p>
+      <%= render partial: 'signed_in_user' %>
     <% else %>
       <%= render partial: 'guest' %>
     <% end %>

@@ -4,8 +4,6 @@ include RandomData
 RSpec.describe WikisController, type: :controller do
   let(:my_wiki) { Wiki.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false) }
 
-
-
   describe "GET #index" do
     it "returns http success" do
       get :index
@@ -18,12 +16,12 @@ RSpec.describe WikisController, type: :controller do
     end
   end
 
-  # describe "GET #show" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET #show" do
+    it "returns http success" do
+      get :show, params: { id: my_wiki.id }
+      expect(response).to have_http_status(:success)
+    end
+  end
 
   describe "GET #new" do
     it "returns http success" do

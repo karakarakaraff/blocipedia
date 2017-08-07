@@ -2,7 +2,9 @@
   <div class="col-md-12">
     <h1><%= @wiki.title %></h1>
     <p><%= @wiki.body %></p>
+    <p>&nbsp;</p>
     <p><%= link_to "Edit wiki", edit_wiki_path(@wiki), class: 'button' %>
-    <%= link_to "Delete wiki", [@wiki], method: :delete, class: 'button', data: { confirm: 'Are you sure you want to delete this wiki?' } %></p>
+    <%= link_to "Delete wiki", [@wiki], method: :delete, class: 'button', data: { confirm: 'Are you sure you want to delete this wiki?' } %>
+    <%= link_to "View all wikis", wikis_path, class: 'button' %></p>
   </div>
 </div>

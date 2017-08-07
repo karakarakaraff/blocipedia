@@ -5,3 +5,7 @@
 .checkbox {
   margin-left: 20px !important;
 }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f0f0f0 !important;
+}
