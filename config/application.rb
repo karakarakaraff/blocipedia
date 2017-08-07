@@ -27,5 +27,7 @@ module Blocipedia
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.autoload_paths << File.join(config.root, "lib")
   end
 end

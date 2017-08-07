@@ -17,11 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.a, body > div > a {
+a {
   color: #9d9d9d;
 }
 
-.a:hover, body > div > a:hover {
+a:hover {
   color: #000;
   text-decoration: none;
 }

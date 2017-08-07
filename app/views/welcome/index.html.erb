@@ -1,6 +1,11 @@
-<h1 class="text-center">Blocipedia: Social, Markdown Wikis</h1>
-<% if user_signed_in? %>
-  Hello, <%= current_user.username %>!
-<% else %>
-  <%= render partial: 'guest' %>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="text-center">Blocipedia: Social, Markdown Wikis</h1>
+    <% if user_signed_in? %>
+      <p>Hello, <%= current_user.username %>!</p>
+      <p><%= link_to "View all wikis", wikis_path, class: 'button' %></p>
+    <% else %>
+      <%= render partial: 'guest' %>
+    <% end %>
+  </div>
+</div>
