@@ -2,7 +2,7 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe WikisController, type: :controller do
-  let(:my_wiki) { Wiki.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false) }
+  let(:my_wiki) { create(:wiki) }
 
   describe "GET #index" do
     it "returns http success" do
@@ -10,7 +10,7 @@ RSpec.describe WikisController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "assigns [my_wiki] to @wikis" do
+    it "assigns to @wikis" do
       get :index
       expect(assigns(:wikis)).to eq([my_wiki])
     end
@@ -42,16 +42,16 @@ RSpec.describe WikisController, type: :controller do
 
   describe "POST create" do
     it "increases the number of Wiki by 1" do
-      expect{ post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false } } }.to change(Wiki,:count).by(1)
+      expect{ post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph } } }.to change(Wiki,:count).by(1)
     end
 
     it "assigns the new wiki to @wiki" do
-      post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false } }
+      post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph } }
       expect(assigns(:wiki)).to eq Wiki.last
     end
 
     it "redirects to the new wiki" do
-      post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph, private: false } }
+      post :create, params: { wiki: { title: RandomData.random_sentence, body: RandomData.random_paragraph } }
       expect(response).to redirect_to Wiki.last
     end
   end
@@ -84,20 +84,19 @@ RSpec.describe WikisController, type: :controller do
       new_title = RandomData.random_sentence
       new_body = RandomData.random_paragraph
 
-      put :update, params: { id: my_wiki.id, wiki: {title: new_title, body: new_body, private: false } }
+      put :update, params: { id: my_wiki.id, wiki: {title: new_title, body: new_body} }
 
       updated_wiki = assigns(:wiki)
       expect(updated_wiki.id).to eq my_wiki.id
       expect(updated_wiki.title).to eq new_title
       expect(updated_wiki.body).to eq new_body
-      expect(updated_wiki.private).to eq my_wiki.private
     end
 
     it "redirects to the updated wiki" do
       new_title = RandomData.random_sentence
       new_body = RandomData.random_paragraph
 
-      put :update, params: { id: my_wiki.id, wiki: {title: new_title, body: new_body, private: false } }
+      put :update, params: { id: my_wiki.id, wiki: {title: new_title, body: new_body} }
       expect(response).to redirect_to my_wiki
     end
   end
