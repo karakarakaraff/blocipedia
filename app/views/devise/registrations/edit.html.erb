@@ -68,9 +68,6 @@
     <% if current_user.premium? %>
       <%= link_to "Cancel Premium Membership", charge_path(current_user), method: :delete, class: 'button-small', data: { confirm: 'Are you sure you want to cancel your premium membership?' } %>
     <% end %>
-    <% if current_user.admin? %>
-      <%= link_to "Begin Premium Membership", new_charge_path, class: 'button' %>
-    <% end %>
 
     <hr>
 
