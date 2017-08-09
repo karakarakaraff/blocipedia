@@ -26,10 +26,14 @@ a:hover {
   text-decoration: none;
 }
 
+hr {
+  border-color: #000;
+}
+
 .button {
+  display: inline-block;
   color: #000;
   background: #fff;
-  margin: 10px 0;
   padding: 10px 20px;
   border: solid #000 2px;
   text-decoration: none;
@@ -43,17 +47,17 @@ a:hover {
   color: #000;
 }
 
-.button-form {
+.button-small {
+  display: inline-block;
   font-size: small;
   color: #000;
   background: #fff;
-  margin-bottom: 20px;
   padding: 5px 10px;
   border: solid #000 2px;
   text-decoration: none;
 }
 
-.button-form:hover {
+.button-small:hover {
   -webkit-box-shadow: 3px 3px 0px #000;
   -moz-box-shadow: 3px 3px 0px #000;
   box-shadow: 3px 3px 0px #000;
@@ -63,4 +67,14 @@ a:hover {
 
 form > .field {
   margin-bottom: 10px;
+}
+
+.box-shaded {
+  background: #f0f0f0;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.box-shaded h2 {
+  margin-top: 0px;
 }

@@ -1,4 +1,5 @@
 <%= form_tag charges_path do %>
-  <h4>Click the button!</h4>
+  <h4>Upgrade to Premium Membership</h4>
+  <p>A one-time fee of $15 will give your account life-time access to private wikis.</p>
   <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>" ></script>
 <% end %>
