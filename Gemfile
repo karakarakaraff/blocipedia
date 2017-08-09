@@ -71,3 +71,6 @@ gem 'devise'
 
 # Store Sendgrid and Devise credentials
 gem 'figaro', '1.0'
+
+# Seed data
+gem 'faker'
