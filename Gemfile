@@ -71,3 +71,9 @@ gem 'devise'
 
 # Store Sendgrid and Devise credentials
 gem 'figaro', '1.0'
+
+# Seed data -- https://github.com/stympy/faker
+gem 'faker'
+
+# Payment gateway for upgrading user accounts from standard to premium
+gem 'stripe'
