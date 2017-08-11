@@ -2,11 +2,15 @@ class WikisController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @wikis = Wiki.all
+    @wikis = WikiPolicy::Scope.new(current_user, Wiki).resolve
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    unless @wiki.collaborators.include?(current_user)
+      flash[:alert] = "You must be a premium user and a collaborator to view that wiki."
+      redirect_to wikis_path
+    end
     unless (@wiki.private == false) || current_user.premium? || current_user.admin?
       flash[:alert] = "You must be a premium user to view private wikis."
       if current_user
