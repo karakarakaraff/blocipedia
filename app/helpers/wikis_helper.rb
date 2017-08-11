@@ -28,7 +28,7 @@ module WikisHelper
       autolink: true,
       space_after_headers: true,
       fenced_code_blocks: true,
-      underline: true,
+      disable_indented_code_blocks: true,
       highlight: true,
       footnotes: true,
       tables: true
