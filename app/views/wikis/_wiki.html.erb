@@ -1,3 +1,7 @@
 <tr>
-  <td class="text-center"><%= link_to wiki.title, wiki %></td>
+  <td class="text-center">
+    <%= link_to wiki do %>
+      <%= wiki_privacy_notice(wiki) %>
+    <% end %>
+  </td>
 </tr>
