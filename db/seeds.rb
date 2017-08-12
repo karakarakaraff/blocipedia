@@ -13,7 +13,8 @@ users = User.all
   Wiki.create!(
   title:     Faker::Hipster.unique.word,
   body:      Faker::Hipster.paragraph,
-  user:      users.sample
+  user:      users.sample,
+  private:   [true, false].sample
   )
 end
 

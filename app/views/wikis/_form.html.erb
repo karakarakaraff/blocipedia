@@ -1,16 +1,18 @@
 <%= form_for wiki do |f| %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control', placeholder: "Enter new wiki title" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Enter new wiki title" %>
   </div>
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter new wiki information" %>
+    <%= f.text_area :body, rows: 8, class: "form-control", placeholder: "Enter new wiki information" %>
   </div>
-  <div class="form-group">
-    <%= f.label :private, class: 'checkbox' do %>
-      <%= f.check_box :private %> Private wiki?
-    <% end %>
-  </div>
-  <%= f.submit "Save", class: 'button-small' %>
+  <% if user_is_authorized_for_private? %>
+    <div class="form-group">
+      <%= f.label :private, class: "checkbox" do %>
+        <%= f.check_box :private %> Private wiki?
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.submit "Save", class: "button-small" %>
 <% end %>
