@@ -1,0 +1,27 @@
+<h3>Collaborators</h3>
+<% if wiki_has_collaborators? %>
+  <% @wiki.collaborators.each do |collaborator| %>
+    <span class="glyphicon glyphicon-user"></span>
+    <%= collaborator.user.username %>
+    <% if @wiki.user == current_user %>
+      <%= link_to "", [collaborator], method: :delete, class: "glyphicon glyphicon-remove" %>
+    <% end %>
+    &nbsp;
+  <% end %>
+<% else %>
+  <p>This wiki doesn't have any collaborators. Click the usernames below to some collaborators!</p>
+<% end %>
+
+<div class="form-group collaborators_list">
+  <% @users.each do |user| %>
+    <% unless user == @wiki.user || user.standard? || @wiki.collaborators.include?(user) %>
+      <%= form_tag collaborators_path, class: "collaborator", method: :post do  %>
+        <%= hidden_field_tag :username, user.username %>
+        <%= hidden_field_tag :wiki_id, @wiki.id %>
+        <%= button_tag(type: "submit", class: "button-small") do %>
+          <span class="glyphicon glyphicon-ok"></span> <%= user.username %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

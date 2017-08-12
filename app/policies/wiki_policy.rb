@@ -22,7 +22,7 @@ class WikiPolicy < ApplicationPolicy
         all_wikis = scope.all
         wikis = []
         all_wikis.each do |wiki|
-          if wiki.private == false || wiki.collaborators.include?(user)
+          if wiki.private == false
             wikis << wiki
           end
         end
