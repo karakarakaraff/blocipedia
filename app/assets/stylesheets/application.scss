@@ -75,6 +75,6 @@ form > .field {
   margin: 20px 0;
 }
 
-.box-shaded h2 {
+.box-shaded h1:nth-child(1), h2:nth-child(1), h3:nth-child(1), h4:nth-child(1) {
   margin-top: 0px;
 }

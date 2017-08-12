@@ -1,12 +1,9 @@
-<div class="box-shaded">
-  <h2>Collaborators</h2>
-  <% if wiki_has_collaborators? %>
-    <% @wiki.collaborators.each do |collaborator| %>
-      <span class="glyphicon glyphicon-user"></span>
-      <%= collaborator.user.username %>
-      &nbsp;
-    <% end %>
-  <% else %>
-    <p>This wiki doesn't have any collaborators.</p>
+<% if wiki_has_collaborators? %>
+  <% @wiki.collaborators.each do |collaborator| %>
+    <span class="glyphicon glyphicon-user"></span>
+    <%= collaborator.user.username %>
+    &nbsp;
   <% end %>
-</div>
+<% else %>
+  <p>This wiki doesn't have any collaborators.</p>
+<% end %>
