@@ -80,3 +80,6 @@ gem 'stripe'
 
 # Markdown parser
 gem 'redcarpet'
+
+# Authorization system
+gem 'pundit'

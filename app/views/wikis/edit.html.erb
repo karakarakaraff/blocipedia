@@ -2,6 +2,9 @@
   <div class="col-md-9">
     <h1>Edit Wiki</h1>
     <%= render partial: 'form', locals: { wiki: @wiki } %>
+    <% if @wiki.private? && user_is_authorized_for_collaborator_edit? %>
+      <%= render partial: 'collaborators/edit_collaborators', locals: { wiki: @wiki, user: current_user } %>
+    <% end %>
   </div>
   <div class="col-md-3 box-shaded">
     <h2>Markdown</h2>

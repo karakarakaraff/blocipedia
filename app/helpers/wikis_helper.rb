@@ -7,12 +7,20 @@ module WikisHelper
     current_user.premium? || current_user.admin?
   end
 
+  def user_is_authorized_for_collaborator_edit?
+    @wiki.user || current_user.admin?
+  end
+
   def user_is_authorized_for_delete?
     current_user.admin?
   end
 
   def user_has_wikis?
     @user.wikis.any?
+  end
+
+  def wiki_has_collaborators?
+    @wiki.collaborators.any?
   end
 
   def wiki_privacy_notice(wiki)
