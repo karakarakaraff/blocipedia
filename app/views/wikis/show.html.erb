@@ -5,17 +5,17 @@
   </div>
 </div>
 
-<% if @wiki.private? %>
-  <div class="row">
-    <div class="col-md-12 box-shaded">
-      <h4>Creator</h4>
-      <span class="glyphicon glyphicon-user"></span> <%= @wiki.user.username %>
+<div class="row">
+  <div class="col-md-12 box-shaded">
+    <h4>Creator</h4>
+    <span class="glyphicon glyphicon-user"></span> <%= @wiki.user.username %>
+    <% if @wiki.private? %>
       <p>&nbsp;</p>
       <h4>Collaborators</h4>
       <%= render partial: 'collaborators/view_collaborators', locals: { wiki: @wiki, user: current_user } %>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <div class="row">
   <div class="col-md-12">
