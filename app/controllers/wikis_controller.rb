@@ -12,11 +12,7 @@ class WikisController < ApplicationController
         wiki_path
       elsif current_user.standard?
         flash[:alert] = "You must be a premium user to view private wikis."
-        if current_user
-          redirect_to new_charge_path
-        else
-          redirect_to new_user_registration_path
-        end
+        redirect_to new_charge_path
       elsif @wiki.collaborators.exclude?(current_user)
         flash[:alert] = "You must be a collaborator to view that wiki."
         redirect_to wikis_path
@@ -45,6 +41,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.all
   end
 
   def update

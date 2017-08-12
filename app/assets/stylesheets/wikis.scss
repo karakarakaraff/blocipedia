@@ -9,3 +9,12 @@
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #f0f0f0 !important;
 }
+
+.collaborators_list {
+  margin-top: 10px;
+}
+
+form.collaborator {
+  display: inline-block;
+  margin: 0 5px 10px 0;
+}
