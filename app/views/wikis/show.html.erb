@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
     <h1><%= wiki_privacy_notice(@wiki) %></h1>
-    <p><%= @wiki.body %></p>
+    <p><%= markdown(@wiki.body).html_safe %></p>
     <p>&nbsp;</p>
     <p>
       <% if user_is_authorized_for_edit? %>
