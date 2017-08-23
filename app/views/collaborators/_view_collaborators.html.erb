@@ -1,0 +1,9 @@
+<% if wiki_has_collaborators? %>
+  <% @wiki.collaborators.each do |collaborator| %>
+    <span class="glyphicon glyphicon-user"></span>
+    <%= collaborator.user.username %>
+    &nbsp;
+  <% end %>
+<% else %>
+  <p>This wiki doesn't have any collaborators.</p>
+<% end %>

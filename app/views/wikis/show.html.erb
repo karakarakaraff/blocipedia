@@ -2,7 +2,23 @@
   <div class="col-md-12">
     <h1><%= wiki_privacy_notice(@wiki) %></h1>
     <p><%= markdown(@wiki.body).html_safe %></p>
-    <p>&nbsp;</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 box-shaded">
+    <h4>Creator</h4>
+    <span class="glyphicon glyphicon-user"></span> <%= @wiki.user.username %>
+    <% if @wiki.private? %>
+      <p>&nbsp;</p>
+      <h4>Collaborators</h4>
+      <%= render partial: 'collaborators/view_collaborators', locals: { wiki: @wiki, user: current_user } %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <p>
       <% if user_is_authorized_for_edit? %>
         <%= link_to "Edit wiki", edit_wiki_path(@wiki), class: "button" %>
