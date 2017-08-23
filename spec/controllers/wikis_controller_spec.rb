@@ -2,17 +2,18 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe WikisController, type: :controller do
+  let(:my_user) { create(:user) }
   let(:my_wiki) { create(:wiki) }
+
+  before do
+    my_user.confirm
+    sign_in my_user
+  end
 
   describe "GET #index" do
     it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
-    end
-
-    it "assigns to @wikis" do
-      get :index
-      expect(assigns(:wikis)).to eq([my_wiki])
     end
   end
 
