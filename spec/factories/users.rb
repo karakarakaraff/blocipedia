@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    username RandomData.random_username
-    email RandomData.random_email
+    sequence(:username) { |n| "#{n}" + RandomData.random_username }
+    sequence(:email) { |n| "#{n}" + RandomData.random_email }
     password RandomData.random_password
     standard true
     premium false
