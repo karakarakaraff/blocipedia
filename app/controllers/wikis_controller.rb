@@ -13,7 +13,7 @@ class WikisController < ApplicationController
       elsif current_user.standard?
         flash[:alert] = "You must be a premium user to view private wikis."
         redirect_to new_charge_path
-      elsif @wiki.collaborators.exclude?(current_user)
+      elsif @wiki.users.exclude?(current_user)
         flash[:alert] = "You must be a collaborator to view that wiki."
         redirect_to wikis_path
       end
