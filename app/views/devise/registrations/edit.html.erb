@@ -47,10 +47,10 @@
     <h2>Account details</h2>
     <p>Your current membership status:
       <strong>
-        <% if current_user.standard? %>
+        <% if current_user.standard? && !current_user.admin? %>
           STANDARD
         <% end %>
-        <% if current_user.premium? %>
+        <% if current_user.premium? && !current_user.admin? %>
           PREMIUM
         <% end %>
         <% if current_user.admin? %>
@@ -59,13 +59,13 @@
       </strong>
     </p>
 
-    <% if current_user.standard? %>
+    <% if current_user.standard? && !current_user.admin? %>
       <hr>
       <h4>Upgrade to Premium Membership</h4>
       <p>For a one-time fee of $15, you can upgrade your membership to Premium, which will give you access to private wikis.</p>
       <%= link_to "Upgrade to Premium Membership", new_charge_path, class: "button" %>
     <% end %>
-    <% if current_user.premium? %>
+    <% if current_user.premium? && !current_user.admin? %>
       <%= link_to "Cancel Premium Membership", charge_path(current_user), method: :delete, class: "button-small", data: { confirm: "If you cancel your premium membership, the private wikis you created will become public. Are you sure you want to cancel?" } %>
     <% end %>
 
