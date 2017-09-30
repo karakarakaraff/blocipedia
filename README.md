@@ -22,7 +22,7 @@ Only the Blocipedia developer can add administrators. To upgrade any user to adm
 
 ```
 $ rails c
-User.find_by_username("<enter username here>").update_attribute :admin, true
+> User.find_by_username("<enter username here>").update_attribute :admin, true
 ```
 
 ### Markdown
