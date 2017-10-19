@@ -1,7 +1,5 @@
 # Blocipedia
-Blocipedia is a CRUD web application built with Ruby on Rails that allows authenticated users to create public and private markdown-based wikis based on their user role (standard or premium) and collaboration status.
-
-This project was made for [Bloc's Web Development Program](http://bloc.io).
+Blocipedia is a CRUD web application built with Ruby on Rails that allows authenticated users to create public and private markdown-based wikis based on their user role (standard or premium) and collaboration status. Read a case study about building this project on my portfolio website at [karaflaherty.com: Blocipedia](http://karaflaherty.com/blocipedia-information-sharing-through-markdown-based-wikis/).
 
 ### Sign up, sign in, sign out
 Blocipedia uses the [Devise](https://github.com/plataformatec/devise) gem to handle user authentication. When users sign up, they'll choose a username and password as well as receive an email for account confirmation. Users cannot sign in before confirming their email. Once confirmed and signed in, users will have full access to their own wikis as well as all public wikis. When signed out, users will only be able to view the homepage. To read or update an existing wiki, or to create a new wiki, a user must be signed in.
@@ -27,3 +25,6 @@ $ rails c
 
 ### Markdown
 Blocipedia uses the [Redcarpet](https://github.com/vmg/redcarpet) gem to parse Markdown syntax. This gives users the ability to format their wikis with headers, font styles, links, code and more.
+
+---
+This project was built for [Bloc's Web Development Program](https://www.bloc.io/).
